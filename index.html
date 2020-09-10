@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Cadastro_Pessoa{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .formulario{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #BFBFBF;
+            background-color: white;
+            box-shadow: 5px 5px 5px #aaaaaa;      
+        }
+        .entradas{
+            padding: 5px;
+            margin: 10px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Cadastro_Pessoa">
+        <h1>Cadastro de Cliente</h1>
+        <form class="formulario" method="POST" action="./cadastrar.php">
+            <input class="entradas" name="nome" type="text" placeholder="Nome">
+            <input class="entradas" name="endereco" type="text" placeholder="Endereço">
+            <input class="entradas" name="idade" type="number" placeholder="Idade">
+            <input class="entradas" type="submit" placeholder="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
