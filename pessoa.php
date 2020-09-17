@@ -40,3 +40,4 @@ class Pessoa{
         return "Nome : " . $this->nome . "\tEndereço : " . $this->endereco . "\tIdade : " . $this->idade;
     }
 }
+?>

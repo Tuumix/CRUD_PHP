@@ -1,6 +1,8 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="en">   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +42,7 @@
         }
         .image{
             display: flex;
-            background-image: url('pikachu.jpg');
+            background-image: url('config/pikachu.jpg');
             background-repeat: no-repeat;
             background-size: 100% 100%;
             width: 40%;
@@ -55,17 +57,26 @@
     </style>
 </head>
 <body>
-        <form class="form" methos="POST" action="./login.php">
+        <form class="form" methos="POST" action="Login_controller/login">
             <h1>ポケモン！</h1>
+            <?php
+                if(isset($_SESSION['authenticated'])): ?>
+                    <div>
+                        <p>Email or Password is incorrect!</p>
+                    </div>
+                <?php
+                endif;
+                unset($_SESSION['authenticated']);
+            ?>
             <div class="input-group input-group-sm mb-2" style="max-width: 300px; padding: 5px; margin: 10px;">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: #2d3436; color: rgb(229,142,38);">Email</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: #2d3436; color: rgb(229,142,38);">Email</span>
                 </div>
                 <input type="text" name="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" >
             </div>
             <div class="input-group input-group-sm mb-2" style="max-width: 300px; padding: 5px; margin: 10px;">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: #2d3436; color: rgb(229,142,38);">Password</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: #2d3436; color: rgb(229,142,38);">Password</span>
                 </div>
                 <input type="password" name="password" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
             </div>
@@ -74,10 +85,5 @@
         <div class="image">
             <img>
         </div>
-        <!-- <div class="login-grid">
-            <input type="text plac" placeholder="Email">
-            <input type="text" placeholder="Password">
-            <input type="submit" placeholder="Login">
-        </div> -->
 </body>
 </html>

@@ -1,16 +1,15 @@
-<?php
-    session_start();
-    include('verifica_login.php');
-    // require "pessoa.php";
-
-    // $nome = addslashes($_POST['nome']);
-    // $endereco = addslashes($_POST['endereco']);
-    // $idade = addslashes($_POST['idade']);
-
-    // $pessoa = new Pessoa($nome, $endereco, $idade);
-
-    // if($pessoa){
-    //     echo "<h1>Logado com sucesso!!</h1>";
-    // }
-    echo "<h1>Logado com sucesso!</h1>";
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+        session_start();
+        include('verifica_login.php');
+    ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Testando</h1>
+</body>
+</html>
